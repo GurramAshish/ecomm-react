@@ -10,5 +10,5 @@ export default function Temp() {
     });
   }, []);
   console.log(users);
-  return <div>{users && users.map((user) => <li>{user.name}-{user.email}</li>)}</div>;
+  return <div>{users && users.map((user) => <li>{user.name} - {user.email} - {user.role}</li>)}</div>;
 }

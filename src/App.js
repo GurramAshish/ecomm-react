@@ -5,6 +5,7 @@ import Register from "./Components/Auth/Register";
 import Login from "./Components/Auth/Login";
 import Logout from "./Components/Auth/Logout";
 import Cart from "./Components/Cart/Cart";
+import Products from "./Components/Products/Products";
 import Orders from "./Components/Orders/Orders";
 import Cards from "./Components/Products/Cards";
 import Footer from "./Components/Header-Footer/Footer";
@@ -19,7 +20,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path={`${PATH}/temp`} element={<Temp/>}></Route>
-          <Route path={`${PATH}`} element={<Cards />} />
+          <Route path={`${PATH}`} element={<Products />} />
           <Route path={`${PATH}/login`} element={<Login />} />
           <Route path={`${PATH}/register`} element={<Register />} />
           <Route path={`${PATH}/logout`} element={<Logout />} />
