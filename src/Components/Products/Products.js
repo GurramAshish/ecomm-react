@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Btns from "./Btns";
 
 export default function Products() {
   const [products, setproducts] = useState([]);
@@ -20,7 +21,8 @@ export default function Products() {
             </p>
             <h3>{products.name}</h3>
             <p>{products.price}</p>
-            <button>Add To Cart</button>
+            <Btns id={products._id} />
+            {/* <button>Add To Cart</button> */}
           </div>
         ))}
     </div>
