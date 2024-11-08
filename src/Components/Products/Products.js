@@ -1,16 +1,21 @@
 import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import {useContext} from "react";
+import { AppContext } from "../../context";
 import Btns from "./Btns";
 
+
 export default function Products() {
-  const [products, setproducts] = useState([]);
+  // const [products, setproducts] = useState([]);
+  const { products, setproducts } =
+  useContext(AppContext);
   useEffect(() => {
     axios.get("http://localhost:8080/products/all").then((res) => {
       setproducts(res.data);
     });
   }, []);
-  console.log(products);
+  // console.log(products);
   return (
     <div style={{ display: "flex", justifyContent:"center" }}>
       {products &&

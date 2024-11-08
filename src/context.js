@@ -8,6 +8,7 @@ const AppContextProvider = (props) => {
   const [logged, setLogged] = useState(false);
   const [orders, setOrders] = useState([]);
   const [cartItem, setCartItem] = useState({});
+  const [products, setproducts] = useState([]);
 
   const vars = {
     user,
@@ -20,6 +21,8 @@ const AppContextProvider = (props) => {
     setCartItem,
     logged,
     setLogged,
+    products,
+    setproducts,
   };
   return (
     <AppContext.Provider value={vars}>{props.children}</AppContext.Provider>

@@ -3,9 +3,10 @@ import { AppContext } from "../../context";
 import { BiSolidMinusCircle, BiSolidPlusCircle } from "react-icons/bi";
 
 const Row = (props) => {
-  const { products, id } = props;
+  // const { products, id } = props;
+  const { id } = props;
 
-  const { setCartItem, cartItem } = useContext(AppContext);
+  const { setCartItem, cartItem, products } = useContext(AppContext);
   const updateCart = (id, quantity) => {
     setCartItem((lastItem) => ({ ...lastItem, [id]: quantity }));
   };

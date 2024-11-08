@@ -7,7 +7,9 @@ import { AppContext } from "../../context";
 const Btns = (props) => {
   const { cartItem, setCartItem } = useContext(AppContext);
   const addCart = (id) => {
+    console.log(cartItem)
     setCartItem((lastItem) => ({ ...lastItem, [id]: (lastItem[id] ?? 0) + 1 }));
+  console.log(cartItem)
   };
   const updateCart = (id, quantity) => {
     setCartItem((lastItem) => ({ ...lastItem, [id]: quantity }));

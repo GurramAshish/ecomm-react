@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import products from "../Products/products.json";
+// import products from "../Products/products.json";
 import { AppContext } from "../../context";
 import Container from "../../Container";
 import Row from "./Rows";
@@ -8,7 +8,7 @@ import "./cart.css";
 
 const Cart = () => {
   const PATH = process.env.REACT_APP_PATH;
-  const { cartItem, logged, user, setOrders, setCartItem } =
+  const { cartItem, logged, user, setOrders, setCartItem, products } =
     useContext(AppContext);
   // store itemname, quantity, total price and useremail
   const [item, setItem] = useState({});
@@ -20,6 +20,7 @@ const Cart = () => {
     setCartItem(() => []);
   };
   const Navigate = useNavigate();
+  console.log(cartItem)
   return (
     <Container className="cart-container">
       <h1 className="px-lg-4 heading fw-bolder text-start">Cart</h1>
@@ -47,7 +48,8 @@ const Cart = () => {
                 !cartItem[id] ? (
                   <></>
                 ) : (
-                  <Row products={products} id={id} key={id} />
+                  // <Row products={products} id={id} key={id} />
+                  <h1>Hello!!{cartItem[id]}</h1>
                 )
               )}
             </div>
